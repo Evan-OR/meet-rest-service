@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import { USER_SIGNUP } from '../lib/dbQueries';
+import { USER_SIGNUP } from '@lib/dbQueries';
 
 export const handleLogin = (req: Request, res: Response) => {
   const { email, password } = req.body;

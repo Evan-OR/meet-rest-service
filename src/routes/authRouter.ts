@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { attachDB } from '../middlewares/db';
-import { handleSignUp } from '../controllers/authControllers';
+import { handleSignUp } from '@controllers/authControllers';
+import { attachDB } from '@middlewares/db';
 
 const AuthRouter = Router();
 
