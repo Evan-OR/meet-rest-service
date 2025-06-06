@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc"
+    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "build": "tsc && tsc-alias"
   },
   "keywords": [],
   "author": "",
@@ -29,14 +29,8 @@
     "@types/pg": "^8.15.4",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
-  },
-  "_moduleAliases": {
-    "@src": "./dist/src",
-    "@controllers": "./dist/src/controllers",
-    "@lib": "./dist/src/lib",
-    "@middlewares": "./dist/src/middlewares",
-    "@routes": "./dist/src/routes",
-    "@types": "./dist/src/types"
   }
 }
