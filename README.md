@@ -7,6 +7,7 @@ env file structure:
 ```
 PORT=
 SECRET=""
+
 PGUSER=""
 PGHOST=""
 PGDATABASE=""

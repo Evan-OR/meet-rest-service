@@ -1,2 +1,4 @@
-export const USER_SIGNUP =
-  'INSERT INTO users(email, password_hash, name) VALUES ($1, $2, $3) RETURNING id, email, name';
+export const USER_AUTH_QUERIES = {
+  SIGNUP: 'INSERT INTO users(email, password_hash, name) VALUES ($1, $2, $3) RETURNING *',
+  LOGIN: 'SELECT * FROM users WHERE email = $1;',
+};

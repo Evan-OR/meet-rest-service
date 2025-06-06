@@ -3,11 +3,10 @@ import { Request, Response, NextFunction } from 'express';
 
 const authenticateUser = (req: Request, res: Response, next: NextFunction) => {
   try {
-    const authHeader = req.headers.authorization;
-    if (!authHeader) throw new Error('No authorization header found!');
-    const tokenParts = authHeader.split(' ');
+    const authToken = req.body.authToken;
+    if (!authToken) throw new Error('No authorization header found!');
 
-    const decodedUserInfo = jwt.verify(tokenParts[1], process.env.SECRET!);
+    const decodedUserInfo = jwt.verify(authToken, process.env.SECRET!);
     // TODO: set user data on request object
 
     next();
