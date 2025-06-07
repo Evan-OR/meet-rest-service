@@ -16,7 +16,7 @@ app.get('/', (_req, res) => {
 });
 
 app.listen(PORT, async () => {
-  const res = await (await DB_POOL).query('SELECT * FROM gender;');
+  const res = await (await DB_POOL).query('SELECT * FROM genders;');
   console.log(res.rows);
 
   console.log(`Server running at http://localhost:${PORT}`);

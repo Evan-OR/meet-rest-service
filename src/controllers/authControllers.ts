@@ -50,10 +50,10 @@ export const handleSignUp = async (req: Request, res: Response) => {
   //   probably should check for valid email and valid password at some point
 
   const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
-  const lowercaseEmail = email.toLocaleLowerCase;
+  const lowercaseEmail = email.toLocaleLowerCase();
 
   try {
-    const result = await req.db.query(USER_AUTH_QUERIES.SIGNUP, [lowercaseEmail, passwordHash, firstName]);
+    const result = await req.db.query(USER_AUTH_QUERIES.SIGNUP, [lowercaseEmail, passwordHash, firstName, lastName]);
     const userData = result.rows[0];
 
     const token = generateJWT(userData);
