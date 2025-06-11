@@ -3,6 +3,7 @@ import 'dotenv/config';
 import express from 'express';
 import AuthRouter from './routes/authRouter';
 import DB_POOL from './lib/dbPool';
+import UserRoutes from './routes/userRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,6 +11,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use('/auth', AuthRouter);
+// needs auth middleware for JWT token
+app.use('/users', UserRoutes);
 
 app.get('/', (_req, res) => {
   res.send({ msg: 'yo its working !' });

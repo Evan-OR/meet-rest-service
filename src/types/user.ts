@@ -9,3 +9,16 @@ export type User = {
   created_at: string;
   updated_at: string;
 };
+
+export type Gender = 'Male' | 'Female' | 'Non-binary' | ' Other';
+
+export type InterestedInGender = Gender | 'All';
+
+export type ProfileData = {
+  displayName?: string;
+  description?: string;
+  job?: string;
+  dateOfBirth?: string;
+  gender?: Gender;
+  insterestedIn?: InterestedInGender;
+};
